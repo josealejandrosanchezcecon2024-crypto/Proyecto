@@ -8,7 +8,7 @@ export default class Cl_iCliente {
     leercantidadKilometros() {
         return prompt("Introduzca la cantidad de kilómetros recorridos (numéricamente)");
     }
-    reporteCliente(n, t, c, mT) {
+    reporteCliente(n, tV, cK, mT) {
         return `Nombre: ${n}
                 <br>Tipo de vehículo: ${tV}
                 <br>Kilómetros: ${cK}
