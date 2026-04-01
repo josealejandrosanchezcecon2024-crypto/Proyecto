@@ -12,6 +12,6 @@ export default class Cl_iCliente {
         return `Nombre: ${n}
                 <br>Tipo de vehículo: ${t}
                 <br>Kilómetros: ${c}
-                <br>Monto total a pagar: ${mT}`;
+                <br>Monto total a pagar: ${mT}$`;
     }
 }
