@@ -13,7 +13,7 @@ export default class Cl_iViaje {
         return `Nombre: ${n}
         <br> Tipo de Vehículo: ${tV}
         <br> Cantidad de Km: ${ck}
-        <br> Monto por Km Adicional: $${mA}
-        <br> Monto a Pagar: $${mT}`;
+        <br> Monto por Km Adicional: $${(+mA).toFixed(2)}
+        <br> Monto Total a Pagar: $${(+mT).toFixed(2)}`;  
     }
 }
