@@ -6,7 +6,7 @@ export default class Cl_iCliente {
         return prompt("Introduzca su tipo de vehículo: Moto, Paseo, Camioneta");
     }
     leercantidadKilometros() {
-        return prompt("Introduzca la cantidad de kilómetros recorridos (numéricamente), mg/lc");
+        return prompt("Introduzca la cantidad de kilómetros recorridos (numéricamente)");
     }
     reporteCliente(n, t, c, mT) {
         return `Nombre: ${n}
