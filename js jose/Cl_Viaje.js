@@ -37,13 +37,13 @@ montoPagar () {
     }
 }
 montoAdicional () {
-   if (this._tipoVehiculo === "1" && this.cantidadKm > 4.50)
-        return this.montoPagar() * 0.10 ;
-    else if (this._tipoVehiculo === "2" && this.cantidadKm > 4.50)
-        return this.montoPagar() * 0.05 ;
-    else if (this._tipoVehiculo === "3" && this.cantidadKm > 4.50)
-        return this.montoPagar() * 0.15 ;
-    else return 0 ;
+  if (this.cantidadKm <= 4.50) return 0;
+    let kmExtras = this.cantidadKm - 4.50;
+    let porcentaje = 0;
+    if (this._tipoVehiculo === "1") porcentaje = 0.10;
+    else if (this._tipoVehiculo === "2") porcentaje = 0.05;
+    else if (this._tipoVehiculo === "3") porcentaje = 0.15;
+    return Math.round(kmExtras * this.montoPagar() * porcentaje * 100) / 100;
 }
 montoTotal () {
     return this.montoPagar() + this.montoAdicional();
