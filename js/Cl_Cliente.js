@@ -22,7 +22,7 @@ export default class Cl_Cliente {
         return this._cantidadKilometros;
     }
 
-        monto () {
+        montoPagar() {
             switch (this.tipoVehiculo) {
                 case "moto":
                     return 25.0;
