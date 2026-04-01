@@ -25,15 +25,22 @@ get cantidadKm () {
     return this._cantidadKm ;
 }
 montoPagar () {
+     let tarifa;
     switch (this._tipoVehiculo) {
         case "1":
-            return 1.50;
+            tarifa = 1.50;
+            break;
         case "2":
-            return 4.00;
+            tarifa = 4.00;
+            break;
         case "3":
-            return 5.00;
-            default:
-                return 0;
+            tarifa = 5.00;
+            break;
+        default:
+            tarifa = 0;
+    }
+    return this.cantidadKm * tarifa;
+}
     }
 }
 montoAdicional () {
