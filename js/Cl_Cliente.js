@@ -22,15 +22,19 @@ export default class Cl_Cliente {
         return this._cantidadKilometros;
     }
 
-   monto() {
-    if (this.tipoVehiculo == "Moto")
-        return 1.50;
-        else if (this.tipoVehiculo == "Paseo")
-            return 4.00
-        else if (this.tipoVehiculo == "Camioneta")
-            return 5.00;
-   } 
-   montoAdicional () {
+        monto () {
+            switch (this.tipoVehiculo) {
+                case "moto":
+                    return 25.0;
+                case "paseo":
+                    return 40.0;
+                case "camioneta":
+                    return 60.0;
+                default:
+                    return 0;
+            }
+        }
+ montoAdicional () {
     if (this.tipoVehiculo == "moto" && this.cantidadKilometros > 4.50)
         return this.monto() * 0.10;
     else if (this.tipoVehiculo == "paseo" && this.cantidadKilometros > 4.50)
