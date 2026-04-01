@@ -9,4 +9,4 @@ let iviaje = new Cl_iViaje() ,
     viaje = new Cl_Viaje(n,tV,cK) ;
 
 let salida = document.getElementById("salida") ;
-salida.innerHTML = iviaje.reporteViaje(viaje.nombre,viaje.tipoVehiculo,viaje.cantidadKm,viaje.montoAdicional(),viaje.montoPagar()) ;
+salida.innerHTML = iviaje.reporteViaje(viaje.nombre,viaje.tipoVehiculo,viaje.cantidadKm,viaje.montoAdicional(),viaje.montoTotal()) ;
