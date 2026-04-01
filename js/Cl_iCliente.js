@@ -10,8 +10,8 @@ export default class Cl_iCliente {
     }
     reporteCliente(n, t, c, mT) {
         return `Nombre: ${n}
-                <br>Tipo de vehículo: ${t}
-                <br>Kilómetros: ${c}
+                <br>Tipo de vehículo: ${tV}
+                <br>Kilómetros: ${cK}
                 <br>Monto total a pagar: ${mT}$`;
     }
 }
