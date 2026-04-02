@@ -1,48 +1,49 @@
-// La empresa de Transporte “TaxiTour”, ofrece viajes en diferentes tipos de Vehículos: Moto, De Paseo, Camioneta. De cada cliente se conoce: Nombre, tipo de vehículo y cantidad de kms; además se sabe que el cliente paga una tarifa mínima por viaje hasta 4.5 kms.
-
-export default class Cl_Cliente {  
-    constructor(nombre, tipoVehiculo, cantidadKilometros) {
+export default class Cl_cliente {
+    constructor (nombre,tipoVehiculo,CantidadKilometros) {
         this.nombre = nombre;
         this.tipoVehiculo = tipoVehiculo;
-        this.cantidadKilometros = +cantidadKilometros;
+        this.CantidadKilometros = CantidadKilometros
     }
-    set nombre (n) {
-        this._nombre = n;
+     set nombre (n) { 
+        this._nombre = n; 
     }
-    get nombre(){
-        return this._nombre;
+    get nombre () {
+         return this._nombre; 
+        }
+    
+    set tipoVehiculo (tV) {
+        this._tipoVehiculo = tV.toLowerCase(); // Aquí se convierte "Moto" en "moto"
     }
-     set tipoVehiculo(t) {
-        this.tipoVehiculo = t;
+    get tipoVehiculo () {
+        return this._tipoVehiculo;
     }
-     set cantidadKilometros (c) {
-        this._cantidadKilometros = +c;
+    
+    set cantidadKilometros (cK) {
+        this._cantidadKilometros = +cK;
     }
-    get cantidadKilometros(){
+    get cantidadKilometros () {
         return this._cantidadKilometros;
     }
 
-        montoPagar() {
-            switch (this.tipoVehiculo) {
-                case "moto":
-                    return 25.0;
-                case "paseo":
-                    return 40.0;
-                case "camioneta":
-                    return 60.0;
-                default:
-                    return 0;
-            }
+    montoPagar() {
+        switch (this.tipoVehiculo) {
+      case "moto": return 1.5; 
+      case "paseo": return 4.0;
+      case "camioneta": return 5.0;
+      default: return 0;    
         }
- montoAdicional () {
-    if (this.tipoVehiculo == "moto" && this.cantidadKilometros > 4.50)
-        return this.monto() * 0.10;
-    else if (this.tipoVehiculo == "paseo" && this.cantidadKilometros > 4.50)
-        return this.monto() * 0.05;
-    else if (this.tipoVehiculo == "camioneta" && this.cantidadKilometros > 4.50)
-        return this.monto() * 0.15;
-   }
-   montoTotal () {
-    return this.monto() + this.montoAdicional();
-   }
+    }
+    montoAdicional() {
+        if (this.tipoVehiculo == "moto" || "Moto" && this.CantidadKilometros > 4.5)
+            return (this.montoPagar * 0.10) * this.kmExtra;
+        else if (this.tipoVehiculo == "paseo"|| "Paseo" && this.CantidadKilometros > 4.5)
+            return (this.montoPagar * 0.05) * this.kmExtra;
+        else if (this.tipoVehiculo == "camioneta" || "Camioneta" && this.CantidadKilometros > 4.5)
+            return (this.montoPagar * 0.15) * this.kmExtra;
+        else return 0;
+
+    }
+    montoTotal() {
+        return this.montoPagar() + this.montoAdicional();
+    }
 }
