@@ -1,17 +1,20 @@
 export default class Cl_iCliente {
     leernombre() {
-        return prompt("Introduzca su nombre");
+        return prompt ("introduzca su nombre")
     }
-    leertipoVehiculo() {
-        return prompt("Introduzca su tipo de vehículo: Moto, Paseo, Camioneta");
+    leertipoVehiculo () {
+        return prompt ("introduzca tV")
     }
-    leercantidadKilometros() {
-        return prompt("Introduzca la cantidad de kilómetros recorridos (numéricamente)");
+    leercantidadKilometros () {
+        return prompt ("introduzca la cantidad de kilometros que planea viajar (numerico/decimal)")
     }
-    reporteCliente(n, tV, cK, mT) {
-        return `Nombre: ${n}
-                <br>Tipo de vehículo: ${tV}
-                <br>Kilómetros: ${cK}
-                <br>Monto total a pagar: ${mT}$`;
+    reporteCliente(n,tV,cK,kE,mA,mT) {
+        return `Nombre del cliente: ${n}
+        <br>tipo de vehiculo: ${tV}
+        <br>cantidad de kilometros a recorrer: ${cK}
+        <br> Kilometros por fuera de tarifa minima: ${kE}
+        <br> Monto adicional por kilometros extra: ${mA.toFixed(2)}$
+        <br> Monto total: ${mT.toFixed(2)}$
+        `
     }
 }
