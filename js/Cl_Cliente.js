@@ -12,7 +12,7 @@ export default class Cl_cliente {
         }
     
     set tipoVehiculo (tV) {
-        this._tipoVehiculo = tV.toLowerCase(); // Aquí se convierte "Moto" en "moto"
+        this._tipoVehiculo = tV 
     }
     get tipoVehiculo () {
         return this._tipoVehiculo;
